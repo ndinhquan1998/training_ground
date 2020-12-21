@@ -52,7 +52,8 @@ block content
                         span#followersValue.value #{followersCount}
                         span Followers
         
-        +createPostForm(userLoggedIn)
+        if profileUser == userLoggedIn
+            +createPostForm(userLoggedIn)
         
         .tabsContainer
             +createTab("Posts", `/profile/${profileUser.username}`, selectedTab != "replies")
